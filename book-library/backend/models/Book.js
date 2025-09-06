@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 
 const bookSchema = new mongoose.Schema({
-  title: String,
-  author: String,
-  coverImage: String, // URL to book cover
-  pdfUrl: String      // URL to PDF file
+  title: { type: String, required: true },
+  author: { type: String, required: true },
+  coverImage: { type: String, required: true }, // URL of book cover
+  pdfUrl: { type: String, required: true }      // Link to PDF file
 });
 
-export default mongoose.model("Book", bookSchema);
+const Book = mongoose.model("Book", bookSchema);
+
+export default Book;
