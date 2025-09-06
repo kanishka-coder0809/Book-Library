@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff5eb;
+}
+
+/* Top Navbar */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.category-dropdown {
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  border: none;
+  background: #ff6600;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.register-btn {
+  padding: 8px 15px;
+  background: #ff6600;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Second Nav */
+.second-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #ffe6cc;
+  padding: 10px 0;
+}
+
+.second-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff5eb;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.hero-section p {
+  font-size: 1rem;
+  margin: 20px 0;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.shop-btn {
+  background: #ff6600;
+  color: white;
+}
+
+.best-btn {
+  background: white;
+  border: 1px solid #ff6600;
+  color: #ff6600;
+}
+
+/* Featured Books */
+.featured-books {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.featured-books img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  transform: rotate(-2deg);
+}
