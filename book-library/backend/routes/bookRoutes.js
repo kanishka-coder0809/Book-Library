@@ -1,13 +1,28 @@
 import express from "express";
+import Book from "../models/Book.js";
+
 const router = express.Router();
 
-const sampleBooks = [
-  { _id: 1, title: "The Alchemist", author: "Paulo Coelho", pdfUrl: "https://example.com/alchemist.pdf" },
-  { _id: 2, title: "Atomic Habits", author: "James Clear", pdfUrl: "https://example.com/atomic-habits.pdf" }
-];
+// GET all books
+router.get("/", async (req, res) => {
+  try {
+    const books = await Book.find();
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
-router.get("/", (req, res) => {
-  res.json(sampleBooks);
+// Add a new book (optional for testing)
+router.post("/", async (req, res) => {
+  try {
+    const { title, author, coverImage, pdfUrl } = req.body;
+    const book = new Book({ title, author, coverImage, pdfUrl });
+    await book.save();
+    res.status(201).json(book);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
 export default router;

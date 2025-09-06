@@ -1,5 +1,4 @@
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import bookRoutes from "./routes/bookRoutes.js";
@@ -23,16 +22,15 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB
+// Connect to MongoDB and start server
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("✅ MongoDB Connected");
+    await connectDB();
     app.listen(PORT, () =>
       console.log(`🚀 Server running on http://localhost:${PORT}`)
     );
   } catch (err) {
-    console.error("❌ Database connection failed:", err.message);
+    console.error("❌ Failed to start server:", err.message);
     process.exit(1);
   }
 };
