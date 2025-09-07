@@ -28,6 +28,20 @@ export default function BooksPage() {
     coverImage: "/cover/blue umbrella.webp",
     pdfUrl: "/pdf/The Blue Umbrella.pdf",
   },
+  {
+    _id: "4",
+    title: "Rich Dad Poor Dad",
+    author: "Ruskin Bond",
+    coverImage: "/cover/rich dad.webp",
+    pdfUrl: "/pdf/rich dad.pdf",
+  },
+  {
+    _id: "3",
+    title: "The Blue Umbrella",
+    author: "Ruskin Bond",
+    coverImage: "/cover/blue umbrella.webp",
+    pdfUrl: "/pdf/The Blue Umbrella.pdf",
+  },
 ];
 
 
