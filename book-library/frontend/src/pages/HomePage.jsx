@@ -26,7 +26,7 @@ export default function HomePage() {
           <button className="search-btn">🔍</button>
         </div>
         <div className="nav-icons">
-          <button className="register-btn">Register</button>
+          <button className="register-btn" onClick={() => navigate("/register")}>Register</button>
         </div>
       </div>
 
