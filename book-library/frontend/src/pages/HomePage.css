@@ -1,10 +1,24 @@
+/* ===========================
+   Global Styles
+=========================== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #fff5eb;
 }
 
-/* Top Navbar */
+/* Homepage takes full screen (no scroll) */
+.homepage {
+  height: 100vh;        /* exact full screen */
+  overflow: hidden;     /* no scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ===========================
+   Top Navbar
+=========================== */
 .top-navbar {
   display: flex;
   justify-content: space-between;
@@ -62,74 +76,166 @@ body {
   cursor: pointer;
 }
 
-/* Second Nav */
-.second-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  background: #ffe6cc;
-  padding: 10px 0;
-}
-
-.second-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Hero Section */
+/* ===========================
+   Hero Section (Main Banner)
+=========================== */
 .hero-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff5eb;
-}
-
-.hero-section h1 {
-  font-size: 2.5rem;
-  color: #222;
-}
-
-.hero-section p {
-  font-size: 1rem;
-  margin: 20px 0;
-  color: #555;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-buttons button {
-  padding: 12px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.shop-btn {
-  background: #ff6600;
-  color: white;
-}
-
-.best-btn {
-  background: white;
-  border: 1px solid #ff6600;
-  color: #ff6600;
-}
-
-/* Featured Books */
-.featured-books {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  gap: 40px;
+  flex: 1;
+  background: #fff5eb;
+  flex-wrap: wrap;
 }
 
-.featured-books img {
-  width: 150px;
-  height: 220px;
+.hero-left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-left h1 {
+  font-size: 36px;
+  color: #181313;
+  margin-bottom: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.hero-left p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons .shop-btn {
+  background: #e76f51;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-buttons .shop-btn:hover {
+  background: #cf5a3d;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* ===========================
+   Footer Book Slider
+=========================== */
+.footer-slider {
+  width: 100%;
+  overflow: hidden;
+  background: #fff5eb;
+  padding: 10px 0;
+  margin-top: -20px;   /* bring books upward */
+  position: relative;
+}
+
+.book-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 25s linear infinite; /* slow + smooth */
+  width: max-content;
+}
+
+.book-track img {
+  width: 140px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  transform: rotate(-2deg);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.book-track img:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for seamless infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* only half since books are duplicated */
+  }
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 600px) {
+  .top-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-dropdown,
+  .search-input,
+  .search-btn {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 8px;
+  }
+
+  .nav-icons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+  .hero-video {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .book-track img {
+    width: 110px;
+    height: 160px;
+  }
 }

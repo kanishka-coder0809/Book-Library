@@ -1,115 +1,109 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import "./BooksPage.css";
 
 export default function BooksPage() {
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
   const defaultBooks = [
   {
-    _id: "1",
+    id: 1,
     title: "The Alchemist",
     author: "Paulo Coelho",
-    coverImage: "/cover/Alchemist.webp",   // ✅ leading slash
+    coverImage: "/cover/Alchemist.webp",
     pdfUrl: "/pdf/The Alchemist.pdf",
   },
   {
-    _id: "2",
+    id: 2,
     title: "One Night at the Call Centre",
     author: "Chetan Bhagat",
     coverImage: "/cover/One night.webp",
     pdfUrl: "/pdf/One Night.pdf",
   },
   {
-    _id: "3",
+    id: 3,
     title: "The Blue Umbrella",
     author: "Ruskin Bond",
     coverImage: "/cover/blue umbrella.webp",
     pdfUrl: "/pdf/The Blue Umbrella.pdf",
   },
   {
-    _id: "4",
+    id: 4,
+    title: "The Theory Of Everything",
+    author: "Stephen Hawking",
+    coverImage: "/cover/theory.webp",
+    pdfUrl: "/pdf/Theory.pdf",
+  },
+  {
+    id: 5,
     title: "Rich Dad Poor Dad",
-    author: "Ruskin Bond",
+    author: "Robert T Kiyosaki",
     coverImage: "/cover/rich dad.webp",
-    pdfUrl: "/pdf/rich dad.pdf",
+    pdfUrl: "/pdf/Rich Dad.pdf",
   },
   {
-    _id: "3",
-    title: "The Blue Umbrella",
-    author: "Ruskin Bond",
-    coverImage: "/cover/blue umbrella.webp",
-    pdfUrl: "/pdf/The Blue Umbrella.pdf",
+    id: 6,
+    title: "Ikigai: The Japanese Secret to a Long and Happy Life",
+    author: "Francesc Miralles and Hector Garcia",
+    coverImage: "/cover/ikigai.webp",
+    pdfUrl: "/pdf/Ikigai.pdf",
+  },
+  {
+    id: 7,
+    title: "Charlie and the Chocolate Factory",
+    author: "Roald Dahl",
+    coverImage: "/cover/charlie.webp",
+    pdfUrl: "/pdf/Choclate.pdf",
+  },
+  {
+    id: 8,
+    title: "Little Women",
+    author: "Louisa Alcot",
+    coverImage: "/cover/little women.webp",
+    pdfUrl: "/pdf/Little-Women.pdf",
+  },
+  {
+    id: 9,
+    title: "Alice in Wonderland",
+    author: "Lewis Caroll",
+    coverImage: "/cover/alice.webp",
+    pdfUrl: "/pdf/alice.pdf",
   },
 ];
 
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const res = await axios.get("http://localhost:5000/api/books");
-        // Merge API books + defaultBooks
-        setBooks([...defaultBooks, ...res.data]);
-      } catch (err) {
-        console.error("Error fetching books:", err);
-        setError("⚠️ Failed to load books. Showing default books.");
-        setBooks(defaultBooks); // fallback to defaults
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBooks();
+    // For now, just show defaultBooks
+    setBooks(defaultBooks);
   }, []);
-
-  if (loading) {
-    return <p className="loading">⏳ Loading books...</p>;
-  }
-
-  if (error) {
-    return <p className="error">{error}</p>;
-  }
 
   return (
     <div className="books-page">
       <h2 className="page-title">📚 All Books</h2>
-
-      {books.length === 0 ? (
-        <p className="no-books">No books available. Add some first!</p>
-      ) : (
-        <div className="books-grid">
-          {books.map((book) => (
-            <div key={book._id} className="book-card">
-              {/* Cover image */}
-              <a href={book.pdfUrl} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={book.coverImage}
-                  alt={book.title}
-                  className="book-cover"
-                  onError={(e) => (e.target.src = "/cover/placeholder.jpg")}
-                />
-              </a>
-
-              {/* Book info */}
-              <div className="book-info">
-                <h3 className="book-title">{book.title}</h3>
-                <p className="book-author">by {book.author}</p>
-              </div>
-
-              {/* Read button */}
-              <a
-                href={book.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="read-btn"
-              >
-                📖 Read
-              </a>
+      <div className="books-grid">
+        {books.map((book) => (
+          <div key={book.id} className="book-card">
+            <a href={book.pdfUrl} target="_blank" rel="noopener noreferrer">
+              <img
+                src={book.coverImage}
+                alt={book.title}
+                className="book-cover"
+                onError={(e) => (e.target.src = "/cover/placeholder.jpg")}
+              />
+            </a>
+            <div className="book-info">
+              <h3 className="book-title">{book.title}</h3>
+              <p className="book-author">by {book.author}</p>
             </div>
-          ))}
-        </div>
-      )}
+            <a
+              href={book.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="read-btn"
+            >
+              📖 Read
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

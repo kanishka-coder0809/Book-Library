@@ -26,62 +26,60 @@ export default function HomePage() {
           <button className="search-btn">🔍</button>
         </div>
         <div className="nav-icons">
-          <span>❤️</span>
-          <span>🛒</span>
           <button className="register-btn">Register</button>
         </div>
       </div>
 
-      {/* Second Nav */}
-      <div className="second-nav">
-        <a href="#">Authors</a>
-        <a href="#">Publishers</a>
-        <a href="#">Novels</a>
-        <a href="#">Sci-Fi</a>
-        <a href="#">Adventure</a>
-        <a href="#">Blogs</a>
-        <a href="#">Best Seller Books</a>
-        <a href="#">Best Deals</a>
-      </div>
-
       {/* Hero Section */}
       <div className="hero-section">
-        <h1>There is no friend as loyal as a book</h1>
-        <p>
-          Reading boosts focus, memory, empathy, and communication, reduces
-          stress, enhances mental health, and may even help you live longer.
-        </p>
-        <div className="hero-buttons">
-          <button className="shop-btn" onClick={() => navigate("/books")}>
-            Shop Now
-          </button>
-          <button className="best-btn">Best Selling Books</button>
+        <div className="hero-left">
+          <h1>There is no friend as loyal as a book</h1>
+          <p>
+            Reading boosts focus, memory, empathy, and communication, reduces
+            stress, enhances mental health, and may even help you live longer.
+          </p>
+          <div className="hero-buttons">
+            <button className="shop-btn" onClick={() => navigate("/books")}>
+              Read Books
+            </button>
+          </div>
+        </div>
+
+        <div className="hero-right">
+          <video autoPlay loop muted playsInline className="hero-video">
+            <source src="/books.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
-
-      {/* Featured Books */}
       <div className="featured-books">
-        <img
-          src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg"
-          alt="Book1"
-        />
-        <img
-          src="https://m.media-amazon.com/images/I/81N4mK1j4nL.jpg"
-          alt="Book2"
-        />
-        <img
-          src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg"
-          alt="Book3"
-        />
-        <img
-          src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg"
-          alt="Book4"
-        />
-        <img
-          src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg"
-          alt="Book5"
-        />
-      </div>
+  <div className="book-track">
+    {/* Row 1 */}
+    <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book1" />
+    <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book2" />
+    <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book3" />
+    <img src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg" alt="Book4" />
+    <img src="https://m.media-amazon.com/images/I/71UwSHSZRnS.jpg" alt="Book5" />
+    <img src="https://m.media-amazon.com/images/I/81-QB7nDh4L.jpg" alt="Book6" />
+    <img src="https://m.media-amazon.com/images/I/91OINeHnJGL.jpg" alt="Book7" />
+    <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book8" />
+    <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Book9" />
+    <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL.jpg" alt="Book10" />
+
+    {/* Row 2 (duplicate for seamless scroll) */}
+    <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book1" />
+    <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book2" />
+    <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book3" />
+    <img src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg" alt="Book4" />
+    <img src="https://m.media-amazon.com/images/I/71UwSHSZRnS.jpg" alt="Book5" />
+    <img src="https://m.media-amazon.com/images/I/81-QB7nDh4L.jpg" alt="Book6" />
+    <img src="https://m.media-amazon.com/images/I/91OINeHnJGL.jpg" alt="Book7" />
+    <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book8" />
+    <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Book9" />
+    <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL.jpg" alt="Book10" />
+  </div>
+</div>
+
     </div>
   );
 }

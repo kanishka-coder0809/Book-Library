@@ -1,27 +1,35 @@
 import express from "express";
-import Book from "../models/Book.js";
+import fs from "fs";
+import path from "path";
 
 const router = express.Router();
 
-// GET all books
-router.get("/", async (req, res) => {
+// Go up one level (..), then into frontend/public
+const coverDir = path.join(process.cwd(), "../frontend/public/cover");
+const pdfDir = path.join(process.cwd(), "../frontend/public/pdf");
+
+router.get("/", (req, res) => {
   try {
-    const books = await Book.find();
+    const coverFiles = fs.readdirSync(coverDir);
+    const pdfFiles = fs.readdirSync(pdfDir);
+
+    const books = coverFiles.map((cover, index) => {
+      const title = path.parse(cover).name;
+      const pdf = pdfFiles.find((file) => path.parse(file).name === title);
+
+      return {
+        id: index + 1,
+        title: title,
+        author: "Unknown",
+        coverImage: `/cover/${cover}`, // static serving
+        pdfUrl: pdf ? `/pdf/${pdf}` : null,
+      };
+    });
+
     res.json(books);
   } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// Add a new book (optional for testing)
-router.post("/", async (req, res) => {
-  try {
-    const { title, author, coverImage, pdfUrl } = req.body;
-    const book = new Book({ title, author, coverImage, pdfUrl });
-    await book.save();
-    res.status(201).json(book);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.error("Error reading books:", err);
+    res.status(500).json({ error: "Failed to load books" });
   }
 });
 

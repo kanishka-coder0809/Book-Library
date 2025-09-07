@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bookRoutes from "./routes/bookRoutes.js";
 import connectDB from "./config/db.js";
-
+import booksRouter from "./routes/books.js";
+import path from "path";
 dotenv.config();
 
 const app = express();
@@ -11,6 +12,11 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use("/api/books", booksRouter);
+app.use("/cover", express.static(path.join(__dirname, "frontend", "public", "cover")));
+app.use("/pdf", express.static(path.join(__dirname, "frontend", "public", "pdf")));
+
+
 
 // Routes
 app.use("/api/books", bookRoutes);
