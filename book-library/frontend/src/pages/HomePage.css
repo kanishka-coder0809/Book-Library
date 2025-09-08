@@ -1,125 +1,256 @@
-/* src/pages/BooksPage.css */
-
-.books-page {
-  padding: 20px;
-  text-align: center;
+/* ===========================
+   Global Styles
+=========================== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff5eb;
 }
 
-.page-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* Homepage takes full screen (no scroll) */
+.homepage {
+  height: 110vh;        /* exact full screen */
+  overflow: hidden;     /* no scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Message when no books */
-.no-books {
-  color: #777;
-  font-size: 16px;
-}
-
-/* 📚 Grid for books */
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  justify-content: center;
-}
-
-/* 📖 Book card */
-.book-card {
+/* ===========================
+   Top Navbar
+=========================== */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
   background: #fff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  border-bottom: 1px solid #eee;
 }
 
-.book-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Book cover */
-.book-cover {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-/* Title & Author */
-.book-title {
-  font-size: 16px;
+.logo {
+  font-size: 22px;
   font-weight: bold;
-  margin: 5px 0;
+  color: #ff6600;
 }
 
-.book-author {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+.search-container {
+  display: flex;
+  align-items: center;
 }
 
-/* Read Button */
-.read-btn {
-  display: inline-block;
-  padding: 6px 12px;
-  background: #4a90e2;
+.category-dropdown {
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  border: none;
+  background: #ff6600;
   color: white;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background 0.2s;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
 }
 
-.read-btn:hover {
-  background: #357ab8;
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
 }
 
-/* ------------------------------
-   📱 Responsiveness
----------------------------------*/
+.register-btn {
+  padding: 8px 15px;
+  background: #ff6600;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
 
-/* Phones */
+/* ===========================
+   Hero Section (Main Banner)
+=========================== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  gap: 40px;
+  flex: 1;
+  background: #fff5eb;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-left h1 {
+  font-size: 36px;
+  color: #181313;
+  margin-bottom: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.hero-left p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons .shop-btn {
+  background: #e76f51;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-buttons .shop-btn:hover {
+  background: #cf5a3d;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* ===========================
+   Footer Book Slider
+=========================== */
+.footer-slider {
+  width: 100%;
+  overflow: hidden;
+  background: #fff5eb;
+  padding: 10px 0;
+  margin-top: -20px;   /* bring books upward */
+  position: relative;
+}
+
+.book-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 25s linear infinite; /* slow + smooth */
+  width: max-content;
+}
+
+.book-track img {
+  width: 140px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.book-track img:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for seamless infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* only half since books are duplicated */
+  }
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
 @media (max-width: 600px) {
-  .page-title {
-    font-size: 20px;
+  .top-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 10px;
   }
 
-  .books-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 15px;
+  .search-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .book-card {
-    padding: 10px;
+  .category-dropdown,
+  .search-input,
+  .search-btn {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 8px;
   }
 
-  .book-cover {
-    height: 180px;
+  .nav-icons {
+    width: 100%;
+    justify-content: space-between;
   }
 
-  .book-title {
+  .hero-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left p {
     font-size: 14px;
   }
 
-  .book-author {
-    font-size: 12px;
+  .hero-video {
+    max-width: 100%;
+    margin-top: 20px;
   }
 
-  .read-btn {
-    font-size: 12px;
-    padding: 5px 8px;
+  .book-track img {
+    width: 110px;
+    height: 160px;
   }
 }
+/*================= SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: rgb(255, 154, 2);
+}
 
-/* Tablets */
-@media (min-width: 601px) and (max-width: 992px) {
-  .books-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 18px;
-  }
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: rgb(160, 67, 0);
+}
 
-  .book-cover {
-    height: 200px;
-  }
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(172, 106, 0);
 }

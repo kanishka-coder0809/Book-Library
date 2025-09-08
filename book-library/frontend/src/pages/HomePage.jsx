@@ -52,34 +52,31 @@ export default function HomePage() {
           </video>
         </div>
       </div>
-      <div className="featured-books">
-  <div className="book-track">
-    {/* Row 1 */}
-    <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book1" />
-    <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book2" />
-    <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book3" />
-    <img src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg" alt="Book4" />
-    <img src="https://m.media-amazon.com/images/I/71UwSHSZRnS.jpg" alt="Book5" />
-    <img src="https://m.media-amazon.com/images/I/81-QB7nDh4L.jpg" alt="Book6" />
-    <img src="https://m.media-amazon.com/images/I/91OINeHnJGL.jpg" alt="Book7" />
-    <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book8" />
-    <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Book9" />
-    <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL.jpg" alt="Book10" />
+      <div className="book-track">
+        {/* Row 1 */}
+        <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book1" />
+        <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book2" />
+        <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book3" />
+        <img src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg" alt="Book4" />
+        <img src="https://m.media-amazon.com/images/I/71UwSHSZRnS.jpg" alt="Book5" />
+        <img src="https://m.media-amazon.com/images/I/81-QB7nDh4L.jpg" alt="Book6" />
+        <img src="https://m.media-amazon.com/images/I/91OINeHnJGL.jpg" alt="Book7" />
+        <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book8" />
+        <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Book9" />
+        <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL.jpg" alt="Book10" />
 
-    {/* Row 2 (duplicate for seamless scroll) */}
-    <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book1" />
-    <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book2" />
-    <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book3" />
-    <img src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg" alt="Book4" />
-    <img src="https://m.media-amazon.com/images/I/71UwSHSZRnS.jpg" alt="Book5" />
-    <img src="https://m.media-amazon.com/images/I/81-QB7nDh4L.jpg" alt="Book6" />
-    <img src="https://m.media-amazon.com/images/I/91OINeHnJGL.jpg" alt="Book7" />
-    <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book8" />
-    <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Book9" />
-    <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL.jpg" alt="Book10" />
-  </div>
-</div>
-
+        {/* Row 2 (duplicate for seamless scroll) */}
+        <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book1" />
+        <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book2" />
+        <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Book3" />
+        <img src="https://m.media-amazon.com/images/I/71KilybDOoL.jpg" alt="Book4" />
+        <img src="https://m.media-amazon.com/images/I/71UwSHSZRnS.jpg" alt="Book5" />
+        <img src="https://m.media-amazon.com/images/I/81-QB7nDh4L.jpg" alt="Book6" />
+        <img src="https://m.media-amazon.com/images/I/91OINeHnJGL.jpg" alt="Book7" />
+        <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book8" />
+        <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Book9" />
+        <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL.jpg" alt="Book10" />
+      </div>
     </div>
   );
 }
