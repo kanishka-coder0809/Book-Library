@@ -7,8 +7,8 @@ export default function BooksPage() {
     id: 1,
     title: "The Alchemist",
     author: "Paulo Coelho",
-    coverImage: "/cover/Alchemist.webp",
-    pdfUrl: "/pdf/The Alchemist.pdf",
+    coverImage: "/cover/alchemist.webp",
+    pdfUrl: "/pdf/alchemist.pdf",
   },
   {
     id: 2,
@@ -65,6 +65,27 @@ export default function BooksPage() {
     author: "Lewis Caroll",
     coverImage: "/cover/alice.webp",
     pdfUrl: "/pdf/alice.pdf",
+  },
+  {
+    id: 10,
+    title: "Atomic Habits",
+    author: "James Clear",
+    coverImage: "/cover/atomic.webp",
+    pdfUrl: "/pdf/Atomic.pdf",
+  },
+  {
+    id: 10,
+    title: "Nancy Drew 01 : The Secret Of The Old Cl: The Secret of the Old Clock",
+    author: "Carolyn G. Keene ",
+    coverImage: "/cover/nancy.webp",
+    pdfUrl: "/pdf/nancy.pdf",
+  },
+  {
+    id: 10,
+    title: "Building a Second Brain",
+    author: "TIAGO FORTE ",
+    coverImage: "/cover/brain.webp",
+    pdfUrl: "/pdf/brain.pdf",
   },
 ];
 

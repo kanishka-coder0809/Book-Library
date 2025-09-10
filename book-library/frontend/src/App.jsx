@@ -1,20 +1,44 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
-import BooksPage from "./pages/BooksPage";
-import RegisterPage from "./pages/RegisterPage";
-import LoginPage from "./pages/LoginPage";
+import React from "react";
+import { FaHeart, FaShoppingCart, FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
+import "./Navbar.css";
 
-export default function App() {
+export default function Navbar() {
+  const navigate = useNavigate(); // ✅ use navigate
+
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/books" element={<BooksPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
-    </>
+    <div className="top-navbar">
+      {/* Logo */}
+      <div className="logo" onClick={() => navigate("/")}>📚 BookBee</div>
+
+      {/* Search */}
+      <div className="search-container">
+        <select className="category-dropdown">
+          <option>Categories</option>
+          <option>Fiction</option>
+          <option>Non-Fiction</option>
+          <option>Romance</option>
+          <option>Adventure</option>
+        </select>
+        <input
+          type="text"
+          placeholder="Search books..."
+          className="search-input"
+        />
+        <button className="search-btn">
+          <FaSearch />
+        </button>
+      </div>
+
+      {/* Icons */}
+      <div className="nav-icons">
+        <FaHeart />
+        <FaShoppingCart />
+        {/* ✅ Register button navigates to /register */}
+        <button className="register-btn" onClick={() => navigate("/register")}>
+          Register
+        </button>
+      </div>
+    </div>
   );
 }
