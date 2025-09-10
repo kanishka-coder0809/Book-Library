@@ -1,11 +1,15 @@
 import React from "react";
 import { FaHeart, FaShoppingCart, FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
 import "./Navbar.css";
 
 export default function Navbar() {
+  const navigate = useNavigate(); // ✅ use navigate
+
   return (
     <div className="top-navbar">
-      <div className="logo">📚 BookBee</div>
+      {/* Logo */}
+      <div className="logo" onClick={() => navigate("/")}>📚 BookBee</div>
 
       {/* Search */}
       <div className="search-container">
@@ -30,7 +34,10 @@ export default function Navbar() {
       <div className="nav-icons">
         <FaHeart />
         <FaShoppingCart />
-        <button className="register-btn">Register</button>
+        {/* ✅ Register button navigates to /register */}
+        <button className="register-btn" onClick={() => navigate("/register")}>
+          Register
+        </button>
       </div>
     </div>
   );
