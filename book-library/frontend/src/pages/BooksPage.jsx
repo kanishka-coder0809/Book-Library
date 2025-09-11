@@ -87,6 +87,55 @@ export default function BooksPage() {
     coverImage: "/cover/brain.webp",
     pdfUrl: "/pdf/brain.pdf",
   },
+  {
+    id: 11,
+    title: "The Stationery Shop Of Tehran",
+    author: "Marjan Kamali ",
+    coverImage: "/cover/shop.webp",
+    pdfUrl: "/pdf/shop.pdf",
+  },
+  {
+    id: 12,
+    title: "Never Lie: A Totally Gripping Thriller with Mind-bending Twists",
+    author: "Freida McFadden ",
+    coverImage: "/cover/lie.webp",
+    pdfUrl: "/pdf/lie.pdf",
+  },
+  {
+    id: 13,
+    title: "The Palace of Illusions",
+    author: "Chitra Banerjee Divakaruni",
+    coverImage: "/cover/illusions.webp",
+    pdfUrl: "/pdf/illusions.pdf",
+  },
+   {
+    id: 14,
+    title: "The Diary of a Young Girl",
+    author: "Anne Frank",
+    coverImage: "/cover/diary.webp",
+    pdfUrl: "/pdf/diary.pdf",
+  },
+   {
+    id: 15,
+    title: "The Girl in Room 105",
+    author: "Chetan Bhagat",
+    coverImage: "/cover/girl.webp",
+    pdfUrl: "/pdf/girl.pdf",
+  },
+   {
+    id: 16,
+    title: "A man called Ove",
+    author: " Fredrik Backman",
+    coverImage: "/cover/man.webp",
+    pdfUrl: "/pdf/man.pdf",
+  },
+  {
+    id: 17,
+    title: "The Secret Garden",
+    author: " Frances Hodgson Burnett",
+    coverImage: "/cover/secret.webp",
+    pdfUrl: "/pdf/secret.pdf",
+  },
 ];
 
   const [books, setBooks] = useState([]);
